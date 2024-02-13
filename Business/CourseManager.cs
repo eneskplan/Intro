@@ -39,7 +39,7 @@ public class CourseManager
     }
     public Course[] GetAll()
     {
-        // Veri kaynağından çekilir.
+        
         return courses;
     }
 }
