@@ -1,5 +1,6 @@
 ﻿
 using Intro.Business;
+using İntro.DataAccess.Concretes;
 using Intro.Entities;
 
 Console.WriteLine("Hello, World!");
@@ -69,15 +70,16 @@ for (int i = 0; i < courses.Length; i++)
 Console.WriteLine("------------------");
 
 
-//CourseManager courseManager = new CourseManager();
-//Course[] courses2 = courseManager.GetAll();
+CourseManager courseManager = new CourseManager(new DapperCourseDal());
+
+List<Course> courses2 = courseManager.GetAll();
 
 
-//for (int i = 0; i < courses2.Length; i++)
-//{
-//    Console.WriteLine(courses2[i].Name + " / " + courses2[i].Price);
-//}
-//courseManager.GetAll();
+for (int i = 0; i < courses2.Count; i++)
+{
+    Console.WriteLine(courses2[i].Name + " / " + courses2[i].Price);
+}
+courseManager.GetAll();
 
 IndividualCustomer customer1 = new IndividualCustomer();
 customer1.Id = 1;
